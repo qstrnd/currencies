@@ -48,6 +48,7 @@
 		B8EAB76028F14563009B74EE /* CurrenciesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrenciesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8EAB76428F14563009B74EE /* CurrenciesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesUITests.swift; sourceTree = "<group>"; };
 		B8EAB76628F14563009B74EE /* CurrenciesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B8EAB77E28F16170009B74EE /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Network; path = Packages/Network; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 		B8EAB73828F14561009B74EE = {
 			isa = PBXGroup;
 			children = (
+				B8EAB77D28F16170009B74EE /* Packages */,
 				B8EAB74328F14561009B74EE /* Currencies */,
 				B8EAB75928F14563009B74EE /* CurrenciesTests */,
 				B8EAB76328F14563009B74EE /* CurrenciesUITests */,
@@ -131,6 +133,14 @@
 				B8EAB76628F14563009B74EE /* CurrenciesUITestsLaunchTests.swift */,
 			);
 			path = CurrenciesUITests;
+			sourceTree = "<group>";
+		};
+		B8EAB77D28F16170009B74EE /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B8EAB77E28F16170009B74EE /* Network */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
