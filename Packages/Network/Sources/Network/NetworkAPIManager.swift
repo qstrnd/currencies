@@ -32,7 +32,7 @@ public final class NetworkAPIManager<TStorage: TokenStorage>: APIManager {
         tokenRequestProvider: TokenRequestProvider?
     ) {
         self.requestManager = requestManager
-        self.dataParser = dataParser ?? DefaultDataParser()
+        self.dataParser = dataParser ?? DefaultDataParser(decoder: JSONDecoder())
         self.tokenStorage = tokenStorage
         self.tokenRequestProvider = tokenRequestProvider
     }

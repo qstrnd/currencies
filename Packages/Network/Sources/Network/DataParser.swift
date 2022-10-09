@@ -11,16 +11,14 @@ public protocol DataParser {
     func decode<T: Decodable>(from data: Data) throws -> T
 }
 
-final class DefaultDataParser: DataParser {
+public final class DefaultDataParser: DataParser {
     private let decoder: JSONDecoder
 
-    init() {
-        self.decoder = JSONDecoder()
-
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+    public init(decoder: JSONDecoder) {
+        self.decoder = decoder
     }
 
-    func decode<T>(from data: Data) throws -> T where T : Decodable {
+    public func decode<T>(from data: Data) throws -> T where T : Decodable {
         try decoder.decode(T.self, from: data)
     }
 }
