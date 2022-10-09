@@ -1,5 +1,5 @@
 //
-//  APIManager.swift
+//  NetworkAPIManager.swift
 //
 //
 //  Created by Andrey Yakovlev on 08.10.2022.
