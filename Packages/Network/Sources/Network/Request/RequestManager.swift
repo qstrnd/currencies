@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol RequestManager {
-    func perform(request: Request) async throws -> Data
+    func perform(request: Request, authToken: String?) async throws -> Data
 }
 
 public final class DefaultRequestManager: RequestManager {
@@ -23,8 +23,13 @@ public final class DefaultRequestManager: RequestManager {
         self.urlRequestBuilder = urlRequestBuilder ?? DefaultURLRequestBuilder()
     }
 
-    public func perform(request: Request) async throws -> Data {
-        let urlRequest = try urlRequestBuilder.urlRequest(for: request)
+    public func perform(request: Request, authToken: String?) async throws -> Data {
+        let urlRequest: URLRequest
+        if let authToken {
+            urlRequest = try urlRequestBuilder.urlRequest(for: request, authToken: authToken)
+        } else {
+            urlRequest = try urlRequestBuilder.urlRequest(for: request)
+        }
 
         let (data, response) = try await session.data(for: urlRequest)
 
