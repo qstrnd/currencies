@@ -10,7 +10,7 @@ import XCTest
 
 final class APIManagerTests: XCTestCase {
 
-    var defaults = UserDefaults(suiteName: #file)!
+    var defaults = InMemoryUserDefaults()
     var tokenStorage: DefaultTokenStorage<TestToken>!
     var sut: NetworkAPIManager<DefaultTokenStorage<TestToken>>!
 
