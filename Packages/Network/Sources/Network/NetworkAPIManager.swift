@@ -61,6 +61,7 @@ public final class NetworkAPIManager<TStorage: TokenStorage>: APIManager {
             token = storedToken
         } else {
             token = try await perform(request: tokenRequestProvider())
+            tokenStorage.save(token: token)
         }
 
         return token.stringValue()

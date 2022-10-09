@@ -12,4 +12,5 @@ struct RequestMock: Request {
     let host = ""
     var path = ""
     let requestType: RequestType = .get
+    var addAuthorizationToken: Bool = false
 }

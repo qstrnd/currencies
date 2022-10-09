@@ -1,5 +1,5 @@
 //
-//  TokenMock.swift
+//  TestToken.swift
 //  
 //
 //  Created by Andrey Yakovlev on 09.10.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import Network
 
-struct TokenMock: Token {
+struct TestToken: Token {
     let value: String
     var expirationDate: Date
 

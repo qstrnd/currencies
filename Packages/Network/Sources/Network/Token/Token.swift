@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol Token: Decodable {
+public protocol Token: Codable {
     func isValid() -> Bool
     func stringValue() -> String
 }
