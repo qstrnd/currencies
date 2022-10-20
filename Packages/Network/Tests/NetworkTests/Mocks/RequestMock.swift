@@ -9,8 +9,8 @@ import Foundation
 import Network
 
 struct RequestMock: Request {
-    let host = ""
+    var host = ""
     var path = ""
-    let requestType: RequestType = .get
+    var requestType: RequestType = .get
     var addAuthorizationToken: Bool = false
 }
