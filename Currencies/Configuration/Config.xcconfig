@@ -1,0 +1,7 @@
+// Provide the actual configs in Configuration/.env file
+
+CFBundleName=
+CFBundleShortVersionString=
+CFBundleVersion=
+
+FIXER_API_KEY=

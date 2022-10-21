@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B81D4C1C2902CE7800BD4CE6 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81D4C1B2902CE7800BD4CE6 /* AppEnvironment.swift */; };
+		B81D4C1F2902D29700BD4CE6 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B81D4C1E2902D29700BD4CE6 /* .env */; };
+		B81D4C212902D65600BD4CE6 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B81D4C202902D65600BD4CE6 /* Config.xcconfig */; };
 		B8EAB74528F14561009B74EE /* CurrenciesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EAB74428F14561009B74EE /* CurrenciesApp.swift */; };
 		B8EAB74728F14561009B74EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EAB74628F14561009B74EE /* ContentView.swift */; };
 		B8EAB74928F14562009B74EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8EAB74828F14562009B74EE /* Assets.xcassets */; };
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B81D4C1A2902CD5300BD4CE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B81D4C1B2902CE7800BD4CE6 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		B81D4C1E2902D29700BD4CE6 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
+		B81D4C202902D65600BD4CE6 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		B8EAB74128F14561009B74EE /* Currencies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currencies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8EAB74428F14561009B74EE /* CurrenciesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesApp.swift; sourceTree = "<group>"; };
 		B8EAB74628F14561009B74EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +83,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B81D4C152902C76800BD4CE6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B8EAB74A28F14562009B74EE /* Preview Content */,
+				B8EAB74828F14562009B74EE /* Assets.xcassets */,
+				B81D4C1A2902CD5300BD4CE6 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B81D4C162902CA6200BD4CE6 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				B8EAB74D28F14562009B74EE /* Persistence.swift */,
+				B8EAB74F28F14562009B74EE /* Currencies.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		B81D4C1D2902D28400BD4CE6 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B81D4C202902D65600BD4CE6 /* Config.xcconfig */,
+				B81D4C1E2902D29700BD4CE6 /* .env */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		B8EAB73828F14561009B74EE = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +135,12 @@
 		B8EAB74328F14561009B74EE /* Currencies */ = {
 			isa = PBXGroup;
 			children = (
+				B81D4C1D2902D28400BD4CE6 /* Configuration */,
+				B81D4C162902CA6200BD4CE6 /* Persistence */,
+				B81D4C152902C76800BD4CE6 /* Resources */,
 				B8EAB74428F14561009B74EE /* CurrenciesApp.swift */,
 				B8EAB74628F14561009B74EE /* ContentView.swift */,
-				B8EAB74828F14562009B74EE /* Assets.xcassets */,
-				B8EAB74D28F14562009B74EE /* Persistence.swift */,
-				B8EAB74F28F14562009B74EE /* Currencies.xcdatamodeld */,
-				B8EAB74A28F14562009B74EE /* Preview Content */,
+				B81D4C1B2902CE7800BD4CE6 /* AppEnvironment.swift */,
 			);
 			path = Currencies;
 			sourceTree = "<group>";
@@ -247,6 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B81D4C212902D65600BD4CE6 /* Config.xcconfig in Resources */,
+				B81D4C1F2902D29700BD4CE6 /* .env in Resources */,
 				B8EAB74C28F14562009B74EE /* Preview Assets.xcassets in Resources */,
 				B8EAB74928F14562009B74EE /* Assets.xcassets in Resources */,
 			);
@@ -277,6 +314,7 @@
 				B8EAB74728F14561009B74EE /* ContentView.swift in Sources */,
 				B8EAB75128F14562009B74EE /* Currencies.xcdatamodeld in Sources */,
 				B8EAB74528F14561009B74EE /* CurrenciesApp.swift in Sources */,
+				B81D4C1C2902CE7800BD4CE6 /* AppEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +353,7 @@
 /* Begin XCBuildConfiguration section */
 		B8EAB76828F14563009B74EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B81D4C202902D65600BD4CE6 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -375,6 +414,7 @@
 		};
 		B8EAB76928F14563009B74EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B81D4C202902D65600BD4CE6 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -434,10 +474,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Currencies/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Currencies/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = C8ZP5CBZNS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Currencies/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -463,10 +504,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Currencies/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Currencies/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = C8ZP5CBZNS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Currencies/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
