@@ -15,7 +15,7 @@ public protocol URLRequestBuilder {
 public final class DefaultURLRequestBuilder: URLRequestBuilder {
     var tokenConfiguration: TokenConfiguration
 
-    init(tokenConfiguration: TokenConfiguration = .default) {
+    public init(tokenConfiguration: TokenConfiguration = .default) {
         self.tokenConfiguration = tokenConfiguration
     }
 

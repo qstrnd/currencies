@@ -11,12 +11,17 @@ public struct TokenConfiguration {
     public let name: String
     public let location: RequestLocation
 
+    public init(name: String, location: RequestLocation) {
+        self.name = name
+        self.location = location
+    }
+
     public enum RequestLocation {
         case query
         case header
     }
 }
 
-extension TokenConfiguration {
+public extension TokenConfiguration {
     static let `default` = TokenConfiguration(name: "Authorization", location: .header)
 }

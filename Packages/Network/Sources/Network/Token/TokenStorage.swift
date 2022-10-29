@@ -5,13 +5,17 @@
 //  Created by Andrey Yakovlev on 09.10.2022.
 //
 
-import UIKit
+import Foundation
 
 public protocol TokenStorage {
     associatedtype T: Token
 
     func getStoredToken() -> T?
     func save<T>(token: T)
+}
+
+public extension TokenStorage {
+    func save<T>(token: T) {}
 }
 
 public class DefaultTokenStorage<T: Token>: TokenStorage {

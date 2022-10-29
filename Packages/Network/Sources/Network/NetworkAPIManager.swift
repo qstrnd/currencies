@@ -29,7 +29,7 @@ public final class NetworkAPIManager<TStorage: TokenStorage>: APIManager {
         requestManager: RequestManager,
         dataParser: DataParser? = nil,
         tokenStorage: TStorage? = nil,
-        tokenRequestProvider: TokenRequestProvider?
+        tokenRequestProvider: TokenRequestProvider? = nil
     ) {
         self.requestManager = requestManager
         self.dataParser = dataParser ?? DefaultDataParser(decoder: JSONDecoder())
@@ -52,14 +52,15 @@ public final class NetworkAPIManager<TStorage: TokenStorage>: APIManager {
         guard let tokenStorage else {
             preconditionFailure("Calling request that requires authorization without settting up a token storage")
         }
-        guard let tokenRequestProvider else {
-            preconditionFailure("Calling request that requires authorization without token request provider")
-        }
 
         let token: TStorage.T
         if let storedToken = tokenStorage.getStoredToken(), storedToken.isValid() {
             token = storedToken
         } else {
+            guard let tokenRequestProvider else {
+                preconditionFailure("Calling request that requires authorization without token request provider")
+            }
+
             token = try await perform(request: tokenRequestProvider())
             tokenStorage.save(token: token)
         }
