@@ -39,13 +39,16 @@ public final class DefaultRequestManager: RequestManager {
 
         let statusCode = httpResponse.statusCode
         guard statusCode == 200 else {
-            if statusCode == 404 {
+            switch statusCode {
+            case 401:
+                throw NetworkError.InvalidResponse.unauthorized
+            case 404:
                 throw NetworkError.InvalidResponse.notFound
-            } else if statusCode >= 400 && statusCode < 500 {
+            case 400 ..< 500:
                 throw NetworkError.InvalidResponse.clientError
-            } else if statusCode >= 500 {
+            case 500...:
                 throw NetworkError.InvalidResponse.serverError
-            } else {
+            default:
                 throw NetworkError.InvalidResponse.other
             }
         }

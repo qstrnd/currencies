@@ -14,6 +14,9 @@ public enum NetworkError: Error {
         /// For 404
         case notFound
 
+        /// For 401
+        case unauthorized
+
         /// For 400s other than 404
         case clientError
 
