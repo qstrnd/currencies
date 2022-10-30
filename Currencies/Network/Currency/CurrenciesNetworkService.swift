@@ -69,4 +69,12 @@ final class CurrenciesNetworkService {
         }
     }
 
+    func getSymbolsDate(request: SymbolsDateRequest) async -> Result<SymbolsDateResponse, Error> {
+        do {
+            return .success(try await networkManager.perform(request: request))
+        } catch {
+            return .failure(error)
+        }
+    }
+
 }

@@ -18,6 +18,8 @@
 		B804C678290E78AD00604F95 /* FluctuationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C677290E78AD00604F95 /* FluctuationResponse.swift */; };
 		B804C67B290E7E1400604F95 /* TimeSeriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C67A290E7E1400604F95 /* TimeSeriesRequest.swift */; };
 		B804C67D290E7E1A00604F95 /* TimeSeriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C67C290E7E1A00604F95 /* TimeSeriesResponse.swift */; };
+		B804C680290E803E00604F95 /* SymbolsDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C67F290E803E00604F95 /* SymbolsDateRequest.swift */; };
+		B804C682290E806300604F95 /* SymbolsDateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C681290E806300604F95 /* SymbolsDateResponse.swift */; };
 		B81D4C1C2902CE7800BD4CE6 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81D4C1B2902CE7800BD4CE6 /* AppEnvironment.swift */; };
 		B81D4C1F2902D29700BD4CE6 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B81D4C1E2902D29700BD4CE6 /* .env */; };
 		B81D4C212902D65600BD4CE6 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B81D4C202902D65600BD4CE6 /* Config.xcconfig */; };
@@ -65,6 +67,8 @@
 		B804C677290E78AD00604F95 /* FluctuationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluctuationResponse.swift; sourceTree = "<group>"; };
 		B804C67A290E7E1400604F95 /* TimeSeriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesRequest.swift; sourceTree = "<group>"; };
 		B804C67C290E7E1A00604F95 /* TimeSeriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesResponse.swift; sourceTree = "<group>"; };
+		B804C67F290E803E00604F95 /* SymbolsDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsDateRequest.swift; sourceTree = "<group>"; };
+		B804C681290E806300604F95 /* SymbolsDateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsDateResponse.swift; sourceTree = "<group>"; };
 		B81D4C1A2902CD5300BD4CE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B81D4C1B2902CE7800BD4CE6 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		B81D4C1E2902D29700BD4CE6 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 		B804C666290D967900604F95 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				B804C67E290E803100604F95 /* SymbolsDate */,
 				B804C679290E7D7F00604F95 /* TimeSeries */,
 				B804C672290E76FB00604F95 /* Fluctuation */,
 				B804C66D290D981600604F95 /* Latest */,
@@ -177,6 +182,15 @@
 				B804C67C290E7E1A00604F95 /* TimeSeriesResponse.swift */,
 			);
 			path = TimeSeries;
+			sourceTree = "<group>";
+		};
+		B804C67E290E803100604F95 /* SymbolsDate */ = {
+			isa = PBXGroup;
+			children = (
+				B804C67F290E803E00604F95 /* SymbolsDateRequest.swift */,
+				B804C681290E806300604F95 /* SymbolsDateResponse.swift */,
+			);
+			path = SymbolsDate;
 			sourceTree = "<group>";
 		};
 		B81D4C152902C76800BD4CE6 /* Resources */ = {
@@ -440,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B804C682290E806300604F95 /* SymbolsDateResponse.swift in Sources */,
 				B804C67D290E7E1A00604F95 /* TimeSeriesResponse.swift in Sources */,
 				B804C66C290D976500604F95 /* SymbolsResponse.swift in Sources */,
 				B8EAB74E28F14562009B74EE /* Persistence.swift in Sources */,
@@ -455,6 +470,7 @@
 				B8EAB74528F14561009B74EE /* CurrenciesApp.swift in Sources */,
 				B8628AE7290D8C460027AB78 /* FixerApiStorage.swift in Sources */,
 				B804C674290E774100604F95 /* FluctuationRequest.swift in Sources */,
+				B804C680290E803E00604F95 /* SymbolsDateRequest.swift in Sources */,
 				B8628AE5290D8C300027AB78 /* FixerApiToken.swift in Sources */,
 				B804C66A290D973700604F95 /* SymbolsRequest.swift in Sources */,
 				B804C671290D999700604F95 /* LatestResponse.swift in Sources */,
