@@ -13,6 +13,9 @@
 		B804C66C290D976500604F95 /* SymbolsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C66B290D976500604F95 /* SymbolsResponse.swift */; };
 		B804C66F290D983800604F95 /* LatestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C66E290D983800604F95 /* LatestRequest.swift */; };
 		B804C671290D999700604F95 /* LatestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C670290D999700604F95 /* LatestResponse.swift */; };
+		B804C674290E774100604F95 /* FluctuationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C673290E774100604F95 /* FluctuationRequest.swift */; };
+		B804C676290E77C100604F95 /* FixerApiDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C675290E77C100604F95 /* FixerApiDateFormatter.swift */; };
+		B804C678290E78AD00604F95 /* FluctuationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C677290E78AD00604F95 /* FluctuationResponse.swift */; };
 		B81D4C1C2902CE7800BD4CE6 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81D4C1B2902CE7800BD4CE6 /* AppEnvironment.swift */; };
 		B81D4C1F2902D29700BD4CE6 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B81D4C1E2902D29700BD4CE6 /* .env */; };
 		B81D4C212902D65600BD4CE6 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B81D4C202902D65600BD4CE6 /* Config.xcconfig */; };
@@ -55,6 +58,9 @@
 		B804C66B290D976500604F95 /* SymbolsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsResponse.swift; sourceTree = "<group>"; };
 		B804C66E290D983800604F95 /* LatestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestRequest.swift; sourceTree = "<group>"; };
 		B804C670290D999700604F95 /* LatestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestResponse.swift; sourceTree = "<group>"; };
+		B804C673290E774100604F95 /* FluctuationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluctuationRequest.swift; sourceTree = "<group>"; };
+		B804C675290E77C100604F95 /* FixerApiDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerApiDateFormatter.swift; sourceTree = "<group>"; };
+		B804C677290E78AD00604F95 /* FluctuationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluctuationResponse.swift; sourceTree = "<group>"; };
 		B81D4C1A2902CD5300BD4CE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B81D4C1B2902CE7800BD4CE6 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		B81D4C1E2902D29700BD4CE6 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		B804C666290D967900604F95 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				B804C672290E76FB00604F95 /* Fluctuation */,
 				B804C66D290D981600604F95 /* Latest */,
 				B804C665290D964E00604F95 /* Symbols */,
 				B804C667290D96B000604F95 /* FixerAPIRequest.swift */,
@@ -147,6 +154,15 @@
 				B804C670290D999700604F95 /* LatestResponse.swift */,
 			);
 			path = Latest;
+			sourceTree = "<group>";
+		};
+		B804C672290E76FB00604F95 /* Fluctuation */ = {
+			isa = PBXGroup;
+			children = (
+				B804C673290E774100604F95 /* FluctuationRequest.swift */,
+				B804C677290E78AD00604F95 /* FluctuationResponse.swift */,
+			);
+			path = Fluctuation;
 			sourceTree = "<group>";
 		};
 		B81D4C152902C76800BD4CE6 /* Resources */ = {
@@ -200,6 +216,7 @@
 				B804C666290D967900604F95 /* Requests */,
 				B804C664290D963D00604F95 /* Token */,
 				B8628AE0290D86D10027AB78 /* CurrenciesNetworkService.swift */,
+				B804C675290E77C100604F95 /* FixerApiDateFormatter.swift */,
 			);
 			path = Currency;
 			sourceTree = "<group>";
@@ -412,13 +429,16 @@
 				B804C66C290D976500604F95 /* SymbolsResponse.swift in Sources */,
 				B8EAB74E28F14562009B74EE /* Persistence.swift in Sources */,
 				B804C66F290D983800604F95 /* LatestRequest.swift in Sources */,
+				B804C676290E77C100604F95 /* FixerApiDateFormatter.swift in Sources */,
 				B81D4C242902D98800BD4CE6 /* CurrencyView.swift in Sources */,
 				B804C668290D96B000604F95 /* FixerAPIRequest.swift in Sources */,
 				B8EAB74728F14561009B74EE /* ContentView.swift in Sources */,
+				B804C678290E78AD00604F95 /* FluctuationResponse.swift in Sources */,
 				B8EAB75128F14562009B74EE /* Currencies.xcdatamodeld in Sources */,
 				B81D4C262902DBCE00BD4CE6 /* CurrencyCell.swift in Sources */,
 				B8EAB74528F14561009B74EE /* CurrenciesApp.swift in Sources */,
 				B8628AE7290D8C460027AB78 /* FixerApiStorage.swift in Sources */,
+				B804C674290E774100604F95 /* FluctuationRequest.swift in Sources */,
 				B8628AE5290D8C300027AB78 /* FixerApiToken.swift in Sources */,
 				B804C66A290D973700604F95 /* SymbolsRequest.swift in Sources */,
 				B804C671290D999700604F95 /* LatestResponse.swift in Sources */,

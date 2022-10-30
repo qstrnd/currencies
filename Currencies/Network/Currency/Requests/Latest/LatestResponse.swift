@@ -8,9 +8,9 @@
 import Foundation
 
 struct LatestResponse: Decodable {
+    let success: Bool
     let base: String
     let date: Date
-    let rates: [String: Double]
-    let success: Bool
     let timestamp: TimeInterval
+    let rates: [String: Double]
 }
