@@ -8,5 +8,5 @@
 import Network
 
 struct SymbolsRequest: FixerAPIRequest {
-    let path = "fixer/symbols"
+    let fixerPath = "symbols"
 }
