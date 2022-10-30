@@ -12,8 +12,6 @@ final class CurrenciesNetworkService {
     let networkManager: NetworkAPIManager<FixerApiTokenStorage>
 
     init() {
-        let fixerTokenStorage = FixerApiTokenStorage()
-
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 30
         configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
@@ -25,13 +23,35 @@ final class CurrenciesNetworkService {
 
         let requestManager = DefaultRequestManager(session: session, urlRequestBuilder: urlRequestBuilder)
 
-        networkManager = NetworkAPIManager(requestManager: requestManager, tokenStorage: fixerTokenStorage)
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-DD"
+
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+
+        let dataParser = DefaultDataParser(decoder: decoder)
+
+        
+        let fixerTokenStorage = FixerApiTokenStorage()
+
+
+        networkManager = NetworkAPIManager(requestManager: requestManager, dataParser: dataParser, tokenStorage: fixerTokenStorage)
     }
 
     func getSymbols() async -> Result<SymbolsResponse, Error> {
         do {
-            let symbolsResponse: SymbolsResponse = try await networkManager.perform(request: SymbolsRequest())
-            return .success(symbolsResponse)
+            let response: SymbolsResponse = try await networkManager.perform(request: SymbolsRequest())
+            return .success(response)
+        } catch {
+            return .failure(error)
+        }
+    }
+
+    func getLatest(for base: String, symbols: [String]) async -> Result<LatestResponse, Error> {
+        do {
+            let response: LatestResponse = try await networkManager.perform(request: LatestRequest(base: base, symbols: symbols))
+            return .success(response)
         } catch {
             return .failure(error)
         }
