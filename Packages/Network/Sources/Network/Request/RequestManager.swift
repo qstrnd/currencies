@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 public protocol RequestManager {
     func perform(request: Request, authToken: String?) async throws -> Data
@@ -31,14 +32,19 @@ public final class DefaultRequestManager: RequestManager {
             urlRequest = try urlRequestBuilder.urlRequest(for: request)
         }
 
+        os_log(.info, log: .network, "Running request for url: \(urlRequest.url!.absoluteString)")
+
         let (data, response) = try await session.data(for: urlRequest)
 
         guard let httpResponse = response as? HTTPURLResponse else {
+            os_log(.debug, log: .network, "Request to \(request.path) failed with invalid response")
             throw NetworkError.InvalidResponse.other
         }
 
         let statusCode = httpResponse.statusCode
         guard statusCode == 200 else {
+            os_log(.debug, log: .network, "Request to \(request.path) failed with status code: \(statusCode). Request: \(request.path)")
+
             switch statusCode {
             case 401:
                 throw NetworkError.InvalidResponse.unauthorized

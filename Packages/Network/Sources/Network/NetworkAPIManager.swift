@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 public protocol APIManager {
     func perform<T: Decodable>(request: Request) async throws -> T
@@ -61,8 +62,12 @@ public final class NetworkAPIManager<TStorage: TokenStorage>: APIManager {
                 preconditionFailure("Calling request that requires authorization without token request provider")
             }
 
+            os_log(.info, log: .network, "Running request for token")
+
             token = try await perform(request: tokenRequestProvider())
             tokenStorage.save(token: token)
+
+            os_log(.info, log: .network, "Saving newly requested token")
         }
 
         return token.stringValue()
