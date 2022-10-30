@@ -8,22 +8,43 @@
 import SwiftUI
 
 struct CurrencyCell: View {
-    let currencySymbol: String
-    let currencyName: String
-    let currencyValue: String
+    struct Model {
+        let badge: CurrencyBadge.Model
+        let name: String
+        let value: String
+        let hasBottomSeparator: Bool
+    }
+
+    @State var model: Model
 
     var body: some View {
-        HStack(alignment: .center, spacing: 8) {
-            CurrencyView(text: currencySymbol)
-            Text(currencyName)
-            Spacer()
-            Text(currencyValue)
+        VStack(spacing: 0) {
+            HStack(alignment: .center, spacing: 8) {
+                CurrencyBadge(model: model.badge)
+                Text(model.name)
+                Spacer()
+                Text(model.value)
+                    .bold()
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+
+
+            if model.hasBottomSeparator {
+                Divider()
+                    .padding(.leading, 16)
+            }
         }
     }
 }
 
 struct CurrencyCell_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencyCell(currencySymbol: "GEL", currencyName: "Georgian Lari", currencyValue: "2,82")
+        CurrencyCell(model: .init(
+            badge: CurrencyBadge.Model(text: "RUB", textColor: .label, backgroundColor: .systemFill),
+            name: "Russian Ruble",
+            value: "₽ 61,58",
+            hasBottomSeparator: true
+        ))
     }
 }
