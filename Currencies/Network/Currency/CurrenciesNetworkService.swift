@@ -23,12 +23,9 @@ final class CurrenciesNetworkService {
 
         let requestManager = DefaultRequestManager(session: session, urlRequestBuilder: urlRequestBuilder)
 
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-DD"
-
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .formatted(FixerApiDateFormatter.shared)
 
         let dataParser = DefaultDataParser(decoder: decoder)
 
@@ -48,12 +45,20 @@ final class CurrenciesNetworkService {
         }
     }
 
-    func getLatest(for base: String, symbols: [String]) async -> Result<LatestResponse, Error> {
+    func getLatest(request: LatestRequest) async -> Result<LatestResponse, Error> {
         do {
-            let response: LatestResponse = try await networkManager.perform(request: LatestRequest(base: base, symbols: symbols))
-            return .success(response)
+            return .success(try await networkManager.perform(request: request))
         } catch {
             return .failure(error)
         }
     }
+
+    func getFluctuation(request: FluctuationRequest) async -> Result<FluctuationResponse, Error> {
+        do {
+            return .success(try await networkManager.perform(request: request))
+        } catch {
+            return .failure(error)
+        }
+    }
+
 }
