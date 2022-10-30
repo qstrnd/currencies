@@ -61,4 +61,12 @@ final class CurrenciesNetworkService {
         }
     }
 
+    func getTimeSeries(request: TimeSeriesRequest) async -> Result<TimeSeriesResponse, Error> {
+        do {
+            return .success(try await networkManager.perform(request: request))
+        } catch {
+            return .failure(error)
+        }
+    }
+
 }

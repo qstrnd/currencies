@@ -24,21 +24,3 @@ struct FluctuationResponse: Decodable {
         let startRate: Double
     }
 }
-
-/*
- {
-   "base": "RUB",
-   "end_date": "2022-02-24",
-   "fluctuation": true,
-   "rates": {
-     "EUR": {
-       "change": -0.0039,
-       "change_pct": -27.0711,
-       "end_rate": 0.01052,
-       "start_rate": 0.014425
-     }
-   },
-   "start_date": "2018-02-24",
-   "success": true
- }
- */
