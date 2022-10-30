@@ -18,14 +18,30 @@ struct CurrencyMiniChart: View {
                 sum + item.price
             } / Double(items.count)
         }
+
+        var min: Double {
+            items.min()?.price ?? 0
+        }
+
+        var max: Double {
+            items.max()?.price ?? 0
+        }
+
+        var yAxisValues: [Double] {
+            items.sorted().map { $0.price }
+        }
     }
 
-    struct ChartItem: Identifiable {
+    struct ChartItem: Identifiable, Comparable {
         let date: Date
         let price: Double
 
         var id: Date {
             date
+        }
+
+        static func < (lhs: Self, rhs: Self) -> Bool {
+            lhs.price < rhs.price
         }
     }
 
@@ -38,7 +54,7 @@ struct CurrencyMiniChart: View {
                 xEnd: .value("End", model.items.last!.date),
                 y: .value("Average", model.average)
             )
-            .lineStyle(.init(dash: [4]))
+            .lineStyle(.init(lineWidth: 1, dash: [5]))
             .foregroundStyle(model.color)
 
 
@@ -46,7 +62,7 @@ struct CurrencyMiniChart: View {
                 x: .value("Date", $0.date),
                 y: .value("Price", $0.price)
             )
-            .lineStyle(.init(lineWidth: 1))
+            .lineStyle(.init(lineWidth: 2))
             .foregroundStyle(model.color)
 
             AreaMark(
@@ -66,7 +82,13 @@ struct CurrencyMiniChart: View {
         .chartLegend(.hidden)
         .chartXAxis(.hidden)
         .chartYAxis(.hidden)
-
+        .chartYScale(
+            domain: ClosedRange(uncheckedBounds: (model.min, model.max)),
+            type: .linear
+        )
+        .chartYAxis {
+            AxisMarks(values: model.yAxisValues)
+        }
     }
 
 }
