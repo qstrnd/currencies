@@ -12,7 +12,7 @@ struct SymbolsDateResponse: Decodable {
     let base: String
 
     let date: Date
-    let historical: Bool
+    let historical: Bool?
     let timestamp: TimeInterval
 
     let rates: [String: Double]

@@ -20,6 +20,8 @@
 		B804C67D290E7E1A00604F95 /* TimeSeriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C67C290E7E1A00604F95 /* TimeSeriesResponse.swift */; };
 		B804C680290E803E00604F95 /* SymbolsDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C67F290E803E00604F95 /* SymbolsDateRequest.swift */; };
 		B804C682290E806300604F95 /* SymbolsDateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C681290E806300604F95 /* SymbolsDateResponse.swift */; };
+		B804C685290E81A900604F95 /* ConvertSymbolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C684290E81A900604F95 /* ConvertSymbolRequest.swift */; };
+		B804C687290E820100604F95 /* ConvertSymbolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804C686290E820100604F95 /* ConvertSymbolResponse.swift */; };
 		B81D4C1C2902CE7800BD4CE6 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81D4C1B2902CE7800BD4CE6 /* AppEnvironment.swift */; };
 		B81D4C1F2902D29700BD4CE6 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B81D4C1E2902D29700BD4CE6 /* .env */; };
 		B81D4C212902D65600BD4CE6 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B81D4C202902D65600BD4CE6 /* Config.xcconfig */; };
@@ -69,6 +71,8 @@
 		B804C67C290E7E1A00604F95 /* TimeSeriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesResponse.swift; sourceTree = "<group>"; };
 		B804C67F290E803E00604F95 /* SymbolsDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsDateRequest.swift; sourceTree = "<group>"; };
 		B804C681290E806300604F95 /* SymbolsDateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsDateResponse.swift; sourceTree = "<group>"; };
+		B804C684290E81A900604F95 /* ConvertSymbolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertSymbolRequest.swift; sourceTree = "<group>"; };
+		B804C686290E820100604F95 /* ConvertSymbolResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertSymbolResponse.swift; sourceTree = "<group>"; };
 		B81D4C1A2902CD5300BD4CE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B81D4C1B2902CE7800BD4CE6 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		B81D4C1E2902D29700BD4CE6 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 		B804C666290D967900604F95 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				B804C683290E818D00604F95 /* ConvertSymbol */,
 				B804C67E290E803100604F95 /* SymbolsDate */,
 				B804C679290E7D7F00604F95 /* TimeSeries */,
 				B804C672290E76FB00604F95 /* Fluctuation */,
@@ -191,6 +196,15 @@
 				B804C681290E806300604F95 /* SymbolsDateResponse.swift */,
 			);
 			path = SymbolsDate;
+			sourceTree = "<group>";
+		};
+		B804C683290E818D00604F95 /* ConvertSymbol */ = {
+			isa = PBXGroup;
+			children = (
+				B804C684290E81A900604F95 /* ConvertSymbolRequest.swift */,
+				B804C686290E820100604F95 /* ConvertSymbolResponse.swift */,
+			);
+			path = ConvertSymbol;
 			sourceTree = "<group>";
 		};
 		B81D4C152902C76800BD4CE6 /* Resources */ = {
@@ -466,6 +480,8 @@
 				B8EAB74728F14561009B74EE /* ContentView.swift in Sources */,
 				B804C678290E78AD00604F95 /* FluctuationResponse.swift in Sources */,
 				B8EAB75128F14562009B74EE /* Currencies.xcdatamodeld in Sources */,
+				B804C687290E820100604F95 /* ConvertSymbolResponse.swift in Sources */,
+				B804C685290E81A900604F95 /* ConvertSymbolRequest.swift in Sources */,
 				B81D4C262902DBCE00BD4CE6 /* CurrencyCell.swift in Sources */,
 				B8EAB74528F14561009B74EE /* CurrenciesApp.swift in Sources */,
 				B8628AE7290D8C460027AB78 /* FixerApiStorage.swift in Sources */,

@@ -77,4 +77,12 @@ final class CurrenciesNetworkService {
         }
     }
 
+    func getConvertedSymbol(request: ConvertSymbolRequest) async -> Result<ConvertSymbolResponse, Error> {
+        do {
+            return .success(try await networkManager.perform(request: request))
+        } catch {
+            return .failure(error)
+        }
+    }
+
 }
