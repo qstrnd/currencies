@@ -318,12 +318,12 @@
 				B81D4C1D2902D28400BD4CE6 /* Configuration */,
 				B81D4C162902CA6200BD4CE6 /* Persistence */,
 				B81D4C152902C76800BD4CE6 /* Resources */,
-				B8EAB74428F14561009B74EE /* CurrenciesApp.swift */,
-				B8EAB74628F14561009B74EE /* ContentView.swift */,
-				B81D4C1B2902CE7800BD4CE6 /* AppEnvironment.swift */,
 				B85F7FA9290EA8E600C6268A /* ViewModifiers */,
 				B85F7FA8290EA8E000C6268A /* Extensions */,
 				B81D4C222902D97800BD4CE6 /* Views */,
+				B8EAB74428F14561009B74EE /* CurrenciesApp.swift */,
+				B8EAB74628F14561009B74EE /* ContentView.swift */,
+				B81D4C1B2902CE7800BD4CE6 /* AppEnvironment.swift */,
 			);
 			path = Currencies;
 			sourceTree = "<group>";
