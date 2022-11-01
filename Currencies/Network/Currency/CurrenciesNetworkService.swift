@@ -8,32 +8,20 @@
 import Foundation
 import Network
 
-final class CurrenciesNetworkService {
-    let networkManager: NetworkAPIManager<FixerApiTokenStorage>
+protocol CurrenciesNetworkService: AnyObject {
+    func getSymbols() async -> Result<SymbolsResponse, Error>
+    func getLatest(request: LatestRequest) async -> Result<LatestResponse, Error>
+    func getFluctuation(request: FluctuationRequest) async -> Result<FluctuationResponse, Error>
+    func getTimeSeries(request: TimeSeriesRequest) async -> Result<TimeSeriesResponse, Error>
+    func getSymbolsDate(request: SymbolsDateRequest) async -> Result<SymbolsDateResponse, Error>
+    func getConvertedSymbol(request: ConvertSymbolRequest) async -> Result<ConvertSymbolResponse, Error>
+}
 
-    init() {
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 30
-        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+final class CurrenciesNetworkServiceImpl: CurrenciesNetworkService {
+    private let networkManager: NetworkAPIManager<FixerApiTokenStorage>
 
-        let session = URLSession(configuration: configuration)
-
-        let tokenConfiguration = TokenConfiguration(name: "apikey", location: .header)
-        let urlRequestBuilder = DefaultURLRequestBuilder(tokenConfiguration: tokenConfiguration)
-
-        let requestManager = DefaultRequestManager(session: session, urlRequestBuilder: urlRequestBuilder)
-
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        decoder.dateDecodingStrategy = .formatted(FixerApiDateFormatter.shared)
-
-        let dataParser = DefaultDataParser(decoder: decoder)
-
-        
-        let fixerTokenStorage = FixerApiTokenStorage()
-
-
-        networkManager = NetworkAPIManager(requestManager: requestManager, dataParser: dataParser, tokenStorage: fixerTokenStorage)
+    init(networkManager: NetworkAPIManager<FixerApiTokenStorage>) {
+        self.networkManager = networkManager
     }
 
     func getSymbols() async -> Result<SymbolsResponse, Error> {
